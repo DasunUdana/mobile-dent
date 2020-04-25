@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
     
     <style>
@@ -45,6 +45,58 @@
       <span class="sr-only">Loading...</span>
     </div>
   </div>
+<!-- The Modal -->
+<div id="myModal" class=" modal ">
+  <!-- Modal content -->
+  <div id="myContent" class="animated fast modal-content" style="display: none;">
+    <div class="close">&times;</div>
+    <div style="font-size: larger; font-weight: 900;">IMPORTANT UPDATE REGARDING COVID-19</div>
+    <div style="font-size: small;">Updated as of 04/24/2020</div>
+    <p style="padding-top: 15px; font-size: medium;">We want you to know, our mobile dent repair service is open for business however we are currently booked until May 10th.</p>
+    <p style=" font-size: medium;">Due to COVID-19, you can only request an appointment online at <a href="http://m-pdrpro.com/#contact-section">m-pdrpro.com</a></p>
+    <p style="font-size: medium;"> We want to be here for you and your vehicles, but we also want to make sure that everyone is staying safe and healthy.</p>
+    <p style="font-size: medium;">Thank you.</p>
+  </div>
+</div>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+  var content = document.getElementById("myContent");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal 
+  // btn.onclick = function () {
+  //   modal.style.display = "block";
+  // }
+
+  $(window).on('load',function(){
+    modal.style.display = "block";
+    setTimeout(() => {
+      content.style.display = "block";
+      content.classList.add('zoomIn');
+    }, 2000);
+  });
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function () {
+    modal.classList.add('zoomOut');
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.classList.add('zoomOut');
+      modal.style.display = "none";
+    }
+  }
+</script>
 
   <div class="site-wrap">
 
@@ -259,6 +311,11 @@ One of the greatest advantages of GPR, when compared to weld-on stud-pulling tec
             <h2 class="font-weight-bold text-black">Gallery</h2>
           </div>
         </div>
+        <div>
+          <h4 style="text-align: center;">
+            We Make Dents Disappear
+          </h4>
+        </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4 project-entry">
             <a href="images/img_1.jpg" class="d-block figure" data-fancybox="gallery">
@@ -343,11 +400,6 @@ One of the greatest advantages of GPR, when compared to weld-on stud-pulling tec
             </a>
           </div>
           <div class="col-lg-4 col-md-6 mb-4 project-entry">
-            <a href="images/img_17.jpg" class="d-block figure" data-fancybox="gallery">
-              <img src="images/img_17.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 project-entry">
             <a href="images/img_18.jpg" class="d-block figure" data-fancybox="gallery">
               <img src="images/img_18.jpg" alt="Image" class="img-fluid">
             </a>
@@ -377,21 +429,6 @@ One of the greatest advantages of GPR, when compared to weld-on stud-pulling tec
               <img src="images/img_23.jpg" alt="Image" class="img-fluid">
             </a>
           </div>
-          <div class="col-lg-4 col-md-6 mb-4 project-entry">
-            <a href="images/img_24.jpg" class="d-block figure" data-fancybox="gallery">
-              <img src="images/img_24.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 project-entry">
-            <a href="images/img_25.jpg" class="d-block figure" data-fancybox="gallery">
-              <img src="images/img_25.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-        </div>
-        <div>
-          <h4 style="text-align: center;">
-            We Make Dents Disappear
-          </h4>
         </div>
       </div>
     </div>
@@ -451,14 +488,38 @@ One of the greatest advantages of GPR, when compared to weld-on stud-pulling tec
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="fullname">Full Name</label>
-                  <input type="text" id="fullname" class="form-control" name="name" placeholder="Full Name">
+                  <label class="font-weight-bold" for="firstname">First Name</label>
+                  <input type="text" id="firstname" class="form-control" name="firstname" placeholder="First Name">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="lastname">Last Name</label>
+                  <input type="text" id="lastname" class="form-control" name="lastname" placeholder="Last Name">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="phone">Phone No</label>
+                  <input type="text" id="phone" class="form-control" name="phone" placeholder="Phone No">
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="font-weight-bold" for="email">Email</label>
                   <input type="email" id="email" class="form-control" name="email" placeholder="Email Address">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="font-weight-bold" for="date">Preferred Date</label>
+                  <input style="width: 175px;" type="date" id="date" class="form-control" name="date" placeholder="Preferred Date">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="font-weight-bold" for="makeModel">Please Tell Us the Year, Make & Model of Your Vehicle</label> 
+                  <textarea name="message" id="makeModel" cols="30" rows="2" name="makeModel" class="form-control" placeholder=""></textarea>
                 </div>
               </div>
 
@@ -523,7 +584,7 @@ One of the greatest advantages of GPR, when compared to weld-on stud-pulling tec
               </div>
             </div>
           </div>
-          <div class="col-lg-4 mb-5 mb-lg-0">
+          <!-- <div class="col-lg-4 mb-5 mb-lg-0">
             <div class="row">
               <div class="col-md-12">
                 <h3 class="footer-heading mb-4">Follow Us</h3>
@@ -535,7 +596,7 @@ One of the greatest advantages of GPR, when compared to weld-on stud-pulling tec
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </footer>
