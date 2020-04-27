@@ -19,9 +19,9 @@ $validator->field('email')->isEmail();
 $validator->field('message')->maxLength(6000);
 
 
-$pp->attachFiles(['image']);
+// $pp->attachFiles(['image']);
 
 
-$pp->sendEmailTo('someone@gmail.com'); // ← Your email here
+$pp->sendEmailTo('inquiry-pdr@m-pdrpro.com'); // ← Your email here
 
 echo $pp->process($_POST);
